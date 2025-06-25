@@ -1,0 +1,39 @@
+{
+  "name": "mern-noteapp",
+  "version": "1.0.0",
+  "main": "electron.js",
+  "description": "A simple MERN note app as desktop",
+  "author": "Vihanga",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron electron.js",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.vihanga.noteapp",
+    "productName": "NoteApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron.js",
+      "frontend/dist/**",
+      "backend/**",
+      "node_modules/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/",
+        "to": "backend"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.12"
+  }
+}

@@ -1,15 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { BrowserRouter } from 'react-router'
-import { Toaster } from 'react-hot-toast'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+import { HashRouter } from 'react-router-dom'; // ✅ Use HashRouter for Electron
+import { Toaster } from 'react-hot-toast';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
       <Toaster />
-    </BrowserRouter>
-  </StrictMode>,
-)
+    </HashRouter>
+  </StrictMode>
+);
